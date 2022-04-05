@@ -12,6 +12,6 @@ void printItem(struct item i)
 
 void main()
 {
-    struct item items = { "John Doe", "Male" };
-    printf("Type: %s", items);
+    struct item item1 = { "John Doe", "Male" };
+    printItem(item1);
 }
