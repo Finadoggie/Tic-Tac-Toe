@@ -1,10 +1,17 @@
 #include <stdio.h>
-#include "tools.h"
+
+struct item {
+    char* name;
+    char* category;
+};
+
+void printItem(struct item i) 
+{
+    printf("Name: %s\nCategory: %s\n", i.name, i.category);
+}
 
 void main()
 {
-    char *arr[] = {"test1", "test2"};
-    int size = sizeof arr / sizeof arr[0];
-    printf("Hello, World", arr[10]);
-    getchar();
+    struct item items = { "John Doe", "Male" };
+    printf("Type: %s", items);
 }
