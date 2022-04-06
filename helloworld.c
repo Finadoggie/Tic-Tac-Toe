@@ -9,6 +9,7 @@ typedef struct
 
 void changeString(char* str)
 {
+    fflush(stdin);
     fgets(str, 99, stdin);
     for (int i = 0; i < 99; i++)
     {
@@ -24,21 +25,28 @@ void printList(ITEM* item, int len)
         printf("Your list is empty!");
         return;
     }
-    printf("Your list is %d item(s)!");
+    printf("\e[1;1H\e[2JYour list is %d item(s)!\n");
     for(int i = 0; i < len; i++) printf("\nItem #%d\n  Name: %s\n  Category: %s\n", i, item[i].name, item[i].category);
+    fflush(stdin);
+    getchar();
     return;
 }
 
 int addItemToList(ITEM* item, int len)
 {
     len += 1;
+    
     item = realloc(item, (len) * 16);
-    printf("New item name: ");
+    printf("\e[1;1H\e[2JNew item name: ");
     item[len - 1].name = (char*)malloc(99);
     changeString(item[len - 1].name);
+    
     printf("New item category: ");
     item[len - 1].category = (char*)malloc(99);
     changeString(item[len - 1].category);
+    printf("Item %s has been added!", item[len - 1].name);
+    fflush((stdin));
+    getchar();
     return len;
 }
 
@@ -52,6 +60,7 @@ char printOptions()
     // printf("%d", sizeof(options));
     int len = sizeof(options) / 8;
     for(int i = 0; i < len; i++) printf("[%d] %s\n", i, options[i]);
+    fflush(stdin);
     return fgetchar();
 }
 
@@ -65,7 +74,7 @@ int main()
 
     while (1)
     {
-        printf("What would you like to do?\n");
+        printf("\e[1;1H\e[2JWhat would you like to do?\n");
         choice = printOptions();
         printf("Len: %d\n", len);
         
