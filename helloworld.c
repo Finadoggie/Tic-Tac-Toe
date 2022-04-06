@@ -36,8 +36,7 @@ int addItemToList(ITEM* item, int len)
     printf("New item name: ");
     item[len - 1].name = (char*)malloc(99);
     changeString(item[len - 1].name);
-
-    printf("\nNew item category: ");
+    printf("New item category: ");
     item[len - 1].category = (char*)malloc(99);
     changeString(item[len - 1].category);
     return len;
