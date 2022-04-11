@@ -2,7 +2,8 @@
 
 void DrawBoard(char board[9])
 {
-    printf("\e[1;1H\e[2J %c | %c | %c\n-----------\n %c | %c | %c\n-----------\n %c | %c | %c\n", board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]);
+    system("clear");
+    printf(" %c | %c | %c\n-----------\n %c | %c | %c\n-----------\n %c | %c | %c\n", board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]);
 }
 
 void DoWinner(char board[9], int player)
