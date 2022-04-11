@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void DrawBoard(char board[9])
 {
-    system("clear");
+    system("cls");
     printf(" %c | %c | %c\n-----------\n %c | %c | %c\n-----------\n %c | %c | %c\n", board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]);
 }
 
