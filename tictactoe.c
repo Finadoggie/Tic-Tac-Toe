@@ -27,16 +27,16 @@ int main(void)
         {   
             for(int player = 1; player <= 2; player++)
             {
-                DrawBoard(board); // Draw Board
-        
-                // Ask player to mark a space       
-                printf("Player %d: Select a space to mark (1-9 = left-right, top-bottom): ", player);
-                while(1){ // Check if the player marked a valid space
+                while(1){ 
+                    DrawBoard(board); // Draw Board
+            
+                    // Ask player to mark a space       
+                    printf("Player %d: Select a space to mark (1-9 = left-right, top-bottom): ", player);
                     fflush(stdin);
                     scanf("%d", &space);
-                    if(board[space - 1] == ' ') break;
+                    if(board[space - 1] == ' ') break; // Loops until player selects a valid space
                 }
-                
+
                 mark = player == 1 ? 'x' : 'o'; // Set the mark used by the player
                 board[space - 1] = mark;        // Mark the desired space
 
